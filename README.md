@@ -36,6 +36,7 @@ DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-ke
  
 6. Install [postman](https://www.getpostman.com/) and start sending the POST request to service endpoint `http://localhost:5000/BeginCreate` with payload as described in the following section. Remember to set header [Content-Type application/json] in postman
 
+![alt text](https://github.com/anuchandy/fluent-service/blob/master/setupimg.png)
 
 ## Sample payloads
 
