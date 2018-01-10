@@ -1,0 +1,128 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>AnuChandy.Fluent.Service.Model</PackageId>
+    <Version>1.4.1</Version>
+    <AssemblyName>AnuChandy.Fluent.Service.Model</AssemblyName>
+    <RootNamespace>AnuChandy.Fluent.Service.Model</RootNamespace>
+    <AssemblyTitle>Microsoft Azure Fluent Service Model</AssemblyTitle>
+    <Authors>Microsoft</Authors>
+    <Description>Defines the models in Microsoft Azure Fluent Service</Description>
+    <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=288890</PackageIconUrl>
+    <PackageTags>REST;Fluent</PackageTags>
+    <PackageProjectUrl>https://github.com/anuchandy/fluent-service/tree/master</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/anuchandy/fluent-service/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.3' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.3' ">1.6.1</NetStandardImplicitPackageVersion>
+    <!--<TargetFrameworks>net452;netstandard1.3</TargetFrameworks>-->
+    <TargetFrameworks>netstandard1.3</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <DefineConstants>$(DefineConstants);NETSTANDARD13;PORTABLE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.3.0" />
+    <PackageReference Include="System.Net.NetworkInformation" Version="4.3.0" />
+  </ItemGroup>
+
+<!-->
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <DefineConstants>$(DefineConstants);NET45</DefineConstants>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+  -->
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="log4net" Version="2.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="WindowsAzure.Storage" Version="8.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Azure.Management.AppService.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.AppService.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Batch.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Batch.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Cdn.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Cdn.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Compute.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Compute.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.ContainerInstance.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.ContainerInstance.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.ContainerRegistry.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.ContainerRegistry.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.ContainerService.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.ContainerService.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.CosmosDB.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.CosmosDB.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Dns.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Dns.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Graph.RBAC.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Graph.RBAC.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.KeyVault.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.KeyVault.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Locks.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Locks.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Network.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Network.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Redis.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Redis.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.ResourceManager.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.ResourceManager.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Search.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Search.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.ServiceBus.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.ServiceBus.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Sql.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Sql.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.Storage.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.Storage.Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Management.TrafficManager.Fluent">
+      <HintPath>..\..\extlib\Microsoft.Azure.Management.TrafficManager.Fluent.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+<!-->
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+-->
+</Project>
